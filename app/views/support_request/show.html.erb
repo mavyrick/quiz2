@@ -1,0 +1,30 @@
+<h1><%= @request.name %></h1>
+
+<h2>Email</h2>
+
+<p>
+  <%= @request.email %>
+</p>
+
+<h2>Department</h2>
+
+<p>
+  <%= @request.department %>
+</p>
+
+<h2>Message</h2>
+
+<p>
+  <%= @request.message %>
+</p>
+
+<h2>Supporter?</h2>
+
+<p>
+  <%= @request.action %>
+</p>
+
+<%= link_to "Edit", edit_support_request_path(@request) %>
+<%= link_to "Delete", support_request_path(@request),
+                      method: :delete,
+                      data: {confirm: "Are you sure?"} %>

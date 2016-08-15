@@ -1,0 +1,39 @@
+<h1>Edit Support Request</h1>
+
+<hr>
+
+<%= @request.errors.full_messages.join(", ") %>
+<%= form_for @request do |f| %>
+
+<%= f.check_box(:action) %>
+<%= f.label(:supporter) %>
+
+<hr>
+
+  <div>
+    <%= f.label "Name*" %>
+    <%= f.text_field :name%>
+  </div>
+  <div>
+    <%= f.label "Email*" %>
+    <%= f.text_field :email%>
+  </div>
+    <%= f.radio_button :department, 'sales' %>
+    <%= f.label :department, 'Sales', :value => 'sales' %>
+    <%= f.radio_button :department, 'marketing' %>
+    <%= f.label :department, 'Marketing', :value => 'marketing' %>
+    <%= f.radio_button :department, 'technical' %>
+    <%= f.label :department, 'Technical', :value => 'email' %>
+    <%# f.radio_button_tag(:department) %>
+    <%# f.label_tag(:sales) %>
+    <%# f.radio_button_tag(:department) %>
+    <%# f.label_tag(:marketing) %>
+    <%# f.radio_button_tag(:department) %>
+    <%# f.label_tag(:technical) %>
+  <div>
+    <%= f.label :message %>
+    <%= f.text_area :message %>
+  </div>
+<%= f.submit %>
+
+<% end %>

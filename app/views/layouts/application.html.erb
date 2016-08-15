@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JoshQuiz</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <%= link_to "Support Requests", support_requests_path %>
+
+  <%= link_to "New Support Request", support_requests_new_path %>
+
+  <%= flash[:notice] || flash[:alert] %>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
