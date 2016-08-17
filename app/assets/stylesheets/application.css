@@ -13,3 +13,133 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  display: table;
+  margin: auto;
+  font-family: arial;
+}
+
+#table-wrapper {
+  background-color: lightgrey;
+  border-radius: 15px;
+  padding: 10px;
+  border: solid black 1px;
+  font-family: arial;
+}
+
+/*table {
+   background-color: lightgrey;
+   border-radius: 15px;
+   padding: 10px;
+   border: solid black 1px;
+   font-family: arial;
+ }*/
+
+ td {
+   border: solid black 1px;
+ }
+
+ #nav_wrapper {
+   background-color: lightblue;
+   padding: 10px;
+   display: block;
+   border-left: solid black 1px;
+   border-right: solid black 1px;
+   border-top: solid black 1px;
+   border-top-right-radius: 15px;
+   border-top-left-radius: 15px;
+ }
+
+ .nav {
+   padding-left: 10px;
+   display: inline-block;
+ }
+
+ #wrapper {
+   background-color: grey;
+   padding: 25px;
+   border: solid black 1px;
+   border-bottom-right-radius: 15px;
+   border-bottom-left-radius: 15px;
+   /*height: 391px;
+   width: 632px*/
+ }
+
+ h1 {
+   display: table;
+   margin: auto;
+   text-align: center;
+   font-family: monaco;
+   text-decoration: underline;
+   background-color: lightgrey;
+   border-radius: 15px;
+   padding: 10px;
+   border: solid black 1px;
+ }
+
+ #delete {
+   border-right: solid black 1px;
+   display: inline-block;
+   padding-right: 5px;
+
+ }
+
+ #form {
+   display: table;
+   background-color: lightgrey;
+   padding: 10px;
+   border-radius: 15px;
+   margin: auto;
+   font-family: arial;
+ }
+
+#checkbox {
+  height: 25px;
+}
+
+#search {
+  float: right;
+}
+
+#pages {
+  display: inline-block;
+  background-color: lightgrey;
+  padding: 10px;
+  border: solid black 1px;
+  border-radius: 15px;
+}
+
+a {
+
+}
+
+a:hover {
+  color: grey;
+}
+
+#required {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#flash {
+  text-align: center;
+  background-color: crimson;
+  border-right: solid black 1px;
+  border-left: solid black 1px;
+  border-top: solid black 1px;
+  padding: 2px;
+  font-size: 12px;
+}
+
+#error {
+  background-color: crimson;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 15px;
+}
+
+#checkbox {
+  float: right;
+}

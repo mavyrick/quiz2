@@ -6,7 +6,7 @@ class SupportRequestController < ApplicationController
 
     if @request.save
   # render :show
-      flash[:notice] = "Project created successfully"
+      flash[:notice] = "Support request created successfully"
       redirect_to support_requests_path(@request)
     else
       render :new
@@ -26,6 +26,7 @@ class SupportRequestController < ApplicationController
 
   def index
     @requests = SupportRequest.order(created_at: :desc).page(params[:page]).per(7)
+    @request = SupportRequest.new
   end
 
   def new
@@ -40,6 +41,6 @@ class SupportRequestController < ApplicationController
     @request = SupportRequest.find params[:id]
     @request.update params.require(:support_request).permit([:name, :email, :message, :department, :action])
     flash[:notice] = "Support request editted successfully"
-    redirect_to support_request_path(@request)
+    redirect_to support_requests_path(@request)
   end
 end

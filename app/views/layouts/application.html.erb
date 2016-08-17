@@ -3,16 +3,26 @@
   <head>
     <title>JoshQuiz</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <%= link_to "Support Requests", support_requests_path %>
+  <div id = "nav_wrapper">
 
-  <%= link_to "New Support Request", support_requests_new_path %>
+  <div class = "nav"><div class="links"><%= link_to "Support Requests", support_requests_path %></div></div>
 
-  <%= flash[:notice] || flash[:alert] %>
+  <div class = "nav"><%= link_to "New Support Request", support_requests_new_path %></div>
+
+  <div class = "nav" id = "search">
+    <label for="name">Search:</label>
+    <input type="text" class="box"></td>
+  </div>
+
+  </div>
+
+<% if flash[:notice] || flash[:alert] %>
+<div id="flash"><%= flash[:notice] || flash[:alert] %></div>
+<% end %>
 
   <body>
     <%= yield %>
