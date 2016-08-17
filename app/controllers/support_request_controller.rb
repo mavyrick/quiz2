@@ -26,7 +26,12 @@ class SupportRequestController < ApplicationController
 
   def index
     @requests = SupportRequest.order(created_at: :desc).page(params[:page]).per(7)
-    @request = SupportRequest.new
+    # support_requests_params = params.require(:support_request).permit([:action])
+    @request = SupportRequest.create
+    # redirect_to support_requests_path(@request)
+    # @request = SupportRequest.find params[:id]
+    # @request.update params.require(:support_request).permit([:action])
+    # redirect_to support_requests_path(@request)
   end
 
   def new

@@ -5,7 +5,7 @@ class CreateSupportRequests < ActiveRecord::Migration[5.0]
       t.string :email
       t.string :department
       t.text :message
-      t.string :action
+      t.boolean :action
 
       t.timestamps
     end

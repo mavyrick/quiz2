@@ -27,15 +27,18 @@
 
                       <div id = "checkbox">
                         <%= form_for @request do |f| %>
-                        <%= f.submit("X") %>
+
+                        <%= f.hidden_field :done, :value => @request.action %>
+                        <div id=button><%= f.submit("Not Done") %></div>
 
                           <%# f.check_box(:action)%>
 
 
                       <% end %>
                     </div>
-                      <%# @request.action %>
-                      <%# request.action=='1' ? 'Done' : 'Not Done' %>
+                      <%= request.action %>
+                      <!-- <%= @request.action %>
+                      <%= request.action=='1' ? 'Done' : 'Not Done' %> -->
   </td>
 </tr>
 <% end %>
