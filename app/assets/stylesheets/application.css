@@ -143,8 +143,17 @@ a:hover {
 #checkbox {
   float: right;
 }
-/*
-.button {
-  height: 25px;
-  width: 25px;
-}*/
+
+#button {
+  float: right;
+  /*height: 25px;
+  width: 25px;*/
+}
+
+.done {
+  border: solid black 1px;
+}
+
+.undone {
+  border: solid black 1px;
+}

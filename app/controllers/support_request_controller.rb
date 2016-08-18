@@ -48,4 +48,9 @@ class SupportRequestController < ApplicationController
     flash[:notice] = "Support request editted successfully"
     redirect_to support_requests_path(@request)
   end
+
+  def search
+    q = params[:user][:name]
+    @requests = SupportRequest.find(:all, :conditions => ["name LIKE %?%",q])
+  end
 end

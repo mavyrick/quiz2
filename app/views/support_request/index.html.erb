@@ -25,18 +25,31 @@
                         method: :delete,
                         data: {confirm: "Are you sure?"} %></div>
 
-                      <div id = "checkbox">
-                        <%= form_for @request do |f| %>
+  <div id="button">
+  <% if request.action == "true" %>
+    <%= form_for request do |f| %>
+      <%= f.hidden_field :action, value: false %>
+      <%= f.submit 'Done', {class: "done"} %>
+    <% end %>
+  <% else %>
+    <%= form_for request do |f| %>
+      <%= f.hidden_field :action, value: true %>
+      <%= f.submit 'Not Done', {class: "undone"} %>
+    <% end %>
+  </div>
 
-                        <%= f.hidden_field :done, :value => @request.action %>
-                        <div id=button><%= f.submit("Not Done") %></div>
+                      <!-- <div id = "checkbox"> -->
+                        <%# form_for @request do |f| %>
+
+                        <%# f.hidden_field :done, :value => @request.action %>
+                        <%# f.submit("Not Done") %>
 
                           <%# f.check_box(:action)%>
 
 
                       <% end %>
-                    </div>
-                      <%= request.action %>
+                    <!-- </div> -->
+                      <%# request.action %>
                       <!-- <%= @request.action %>
                       <%= request.action=='1' ? 'Done' : 'Not Done' %> -->
   </td>

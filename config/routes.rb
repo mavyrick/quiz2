@@ -31,7 +31,7 @@ get '/support_requests/:id' => "support_request#show", as: :support_request
 
 patch '/support_requests/:id' => "support_request#update"
 
-root "support_request#new"
+root "support_request#index"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
