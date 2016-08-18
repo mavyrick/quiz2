@@ -50,7 +50,9 @@ class SupportRequestController < ApplicationController
   end
 
   def search
-    q = params[:user][:name]
-    @requests = SupportRequest.find(:all, :conditions => ["name LIKE %?%",q])
+    search = params[:search][:value]
+    @requests = SupportRequest.where("name ILIKE ? OR email ILIKE ? OR department ILIKE ? OR message ILIKE ?",
+                                    "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+                                    .page(params[:page]).per(7)
   end
 end

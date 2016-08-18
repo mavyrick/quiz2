@@ -14,9 +14,16 @@
   <div class = "nav"><%= link_to "New Support Request", support_requests_new_path %></div>
 
   <div class = "nav" id = "search">
+  <%= form_tag(support_requests_search_path, method: "get") do %>
+    <label for"name">Search: </label>
+    <%= text_field :search, :value %>
+  <% end %>
+  </div>
+
+  <!-- <div class = "nav" id = "search">
     <label for="name">Search:</label>
     <input type="text" class="box"></td>
-  </div>
+  </div> -->
 
   </div>
 

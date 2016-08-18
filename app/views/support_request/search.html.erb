@@ -1,0 +1,69 @@
+<div id="wrapper">
+
+  <h1>Search Results</h1>
+
+  <hr>
+  <div id = "table-wrapper">
+    <hr>
+  <table>
+
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Department</th>
+      <th>Message</th>
+      <th>Actions</th>
+    </tr>
+    <tr>
+      <% @requests.each do |request| %>
+    <td><%= request.name%></td>
+    <td><a href="/<%= request.email %>"><%= request.email %></a></td>
+    <td><%= request.department %></td>
+    <td><%= request.message %></td>
+    <td>
+    <%=link_to "Edit", edit_support_request_path(request.id)%>
+    <div id="delete"><%=link_to "Delete", support_request_path(request.id),
+                          method: :delete,
+                          data: {confirm: "Are you sure?"} %></div>
+
+    <div id="button">
+    <% if request.action == "true" %>
+      <%= form_for request do |f| %>
+        <%= f.hidden_field :action, value: false %>
+        <%= f.submit 'Done', {class: "done"} %>
+      <% end %>
+    <% else %>
+      <%= form_for request do |f| %>
+        <%= f.hidden_field :action, value: true %>
+        <%= f.submit 'Not Done', {class: "undone"} %>
+      <% end %>
+    </div>
+
+                        <!-- <div id = "checkbox"> -->
+                          <%# form_for @request do |f| %>
+
+                          <%# f.hidden_field :done, :value => @request.action %>
+                          <%# f.submit("Not Done") %>
+
+                            <%# f.check_box(:action)%>
+
+
+                        <% end %>
+                      <!-- <#/div> -->
+                        <%# request.action %>
+                        <!-- <%# @request.action %>
+                        <%= request.action=='1' ? 'Done' : 'Not Done' %> -->
+    </td>
+  </tr>
+  <% end %>
+
+  </table>
+  <hr>
+  </div>
+  <br>
+  <!-- <div class="digg_pagination"> -->
+  <div id="pages">
+  <%= paginate @requests %>
+  </div>
+  </div>
+  </div>
